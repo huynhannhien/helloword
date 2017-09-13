@@ -1,0 +1,161 @@
+<apex:page standardController="Account">
+<head>
+ <style>
+ body{
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-size: 15px;
+}
+ #main-page{
+ margin:0 auto;
+ padding: 0;
+ border: soid 1px #000;
+ width: 980px;
+ }
+#header{
+text-align:center;
+}
+ #nav ul {
+  background: #1F568B;
+  list-style-type: none;
+  text-align: center;
+   border-radius: 20px;
+}
+#nav li {
+  color: #f1f1f1;
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: -5px;
+}
+#nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+#nav a:hover {
+  background: #F1F1F1;
+  color: #333;
+}
+#section-left{
+     width: 250px;
+     min-height: 400px;
+     border: 1px solid #CDCDCD;
+     float:left;
+     margin-bottom: 5px;
+     color: #f00;
+     text-align:center;
+     margin-left: -5px;
+     }
+#footer
+{
+    float:left;
+    width: 980px;
+    margin-bottom: 5px;
+    text-align: center;
+    
+}
+#section-right-2 p{
+    float: left;
+    border: solid 2px #000;
+    margin: 3px;
+}
+#section-right-2{
+    padding-left:40px;
+ }
+#section {
+    float: left;
+    width: 100%;
+    margin-left:5px;
+}
+#section-right{
+    float: left;
+    width:720px;   
+}
+#section-right-1{
+    margin-left:100px;
+}
+#tieude{
+font-size: 20px;
+    text-align:center; 
+    }
+
+ </style>
+</head>
+<body>
+    <div id="main-page">
+  <div id="header" >
+    <p> <img src="https://dhth7lt.files.wordpress.com/2012/10/mau-logo-dhcntphcm.jpg" height="100" weight="500"/></p>
+    <h1>BỘ CÔNG THƯƠNG</h1><br/>
+      <h1> TRƯỜNG ÐẠI HỌC CÔNG NGHIỆP THÀNH PHỐ HỒ CHÍ MINH</h1><br/><br/>
+    <h3>Đổi mới, nâng tầm cao mới - Năng động, Hội nhập toàn cầu</h3>
+  </div>
+    <div id="nav">
+            <ul>
+                <li><a href="#">Ðăng nhập</a></li>
+                <li><a href="#">Cập nhật</a></li>
+                <li><a href="#">Xem điểm</a></li>
+                <li><a href="#">Thống kê</a></li>
+                <li><a href="#">Trợ giúp</a></li>
+            </ul>    
+     </div>
+    <div id="section">
+        <br/>
+        <div id="section-left">
+      {!NOW()}   
+ <apex:pageBlock title="Hello">
+    <apex:pageBlockSection >
+        <apex:outputField value="{! Account.Name }"/> <br/>
+        <apex:outputField value="{! Account.Phone }"/> <br/>
+        <apex:outputField value="{! Account.Industry }"/> <br/>
+         <apex:outputField value="{! Account.Owner.Email }"/>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+       <img src="data:image/jpeg;base64,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" height="150" weight="100" width="250"/>
+        </div>
+            <div id="section-right">
+      <div id="tieude">Trang xem điểm</div>
+      <hr style="height:2px" color="#000"/>
+             <apex:form >
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Học kì</span>
+          <select name="Select" >
+            <option>HK I</option>
+            <option>HK II</option>
+            <option>HK III</option>
+          </select>
+          
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Năm Học&nbsp;</span>
+          <select>
+            <option>2015-2016</option>
+            <option>2016-2017</option>
+            <option>2017-2018</option>
+          </select>
+          <br/>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Môn Học&nbsp;</span>
+          <select>
+            <option>Mạng máy tính</option>
+            <option>Phát triển ứng dụng</option>
+            <option>Quản lý dự án CNTT</option>
+          </select>
+          
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mã học phần&nbsp;</span>
+          <select>
+            <option>210143510</option>
+            <option>210143701</option>
+            <option>210142102</option>
+          </select>
+           <br/><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <apex:commandButton value="Xem Ðiểm" />
+          </apex:form>
+      </div>
+      
+     </div>
+    <div id="footer">
+            Địa chỉ : Số 12 Nguyễn Văn Bảo, Phường 4, Quận Gò Vấp, Thành phố Hồ Chí Minh
+        </div>
+    </div>
+</body>
+</apex:page>
+                                        
